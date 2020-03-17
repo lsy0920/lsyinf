@@ -7,7 +7,7 @@ spring:
     driverClassName: oracle.jdbc.driver.OracleDriver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-    url: jdbc:oracle:thin:@xx.x.xx.xx:xxxx/srm.xxx.com
+    url: 
     username: xxx
     password: xxx
 mybatis-plus:
