@@ -1,0 +1,32 @@
+{
+    "departments":[
+        {
+            "value": "informationEngineer",
+            "label": "信息工程部",
+            "offices": [
+                {
+                    "value": "softDeparnmentCenter",
+                    "label": "软件开发中心"
+                },
+                {
+                    "value": "informationSecurity",
+                    "label": "信息安全"
+                },
+                {
+                    "value": "dataCenter",
+                    "label": "数据中心"
+                }
+            ]
+        },
+        {
+            "value": "financeDepartment",
+            "label": "财务部",
+            "offices": [
+                {
+                    "value": "financeCenter",
+                    "label": "财务中心"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.link.mapper.LinkMapper">
+    <select id="getDepartment" resultType="com.demo.link.entity.Link">
+        select id, department from department_link where 1=1
+        <if test="params.department !=null and params.department.trim() != ''">
+            and department = #{params.department}
+        </if>
+        <if test="params.id !=null and params.id.trim() != ''">
+            and id = #{params.id}
+        </if>
+    </select>
+    <select id="getOffice" resultType="com.demo.link.entity.Link">
+        select id, office from department_link where 1=1
+        <if test="params.office !=null and params.office.trim() != ''">
+            and office = #{params.office}
+        </if>
+        <if test="params.id !=null and params.id.trim() != ''">
+            and id = #{params.id}
+        </if>
+    </select>
+
+</mapper>

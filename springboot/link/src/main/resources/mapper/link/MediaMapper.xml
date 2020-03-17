@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.link.mapper.MediaMapper">
+    <select id="getPie" resultType="com.demo.link.entity.Media">
+        select media name, pageview value from chart_pie where 1=1
+        <if test="params.name !=null and params.name.trim() != ''">
+            and media = #{params.name}
+        </if>
+        <if test="params.value !=null and params.value.trim() != ''">
+            and pageview = #{params.value}
+        </if>
+    </select>
+    <select id="getPieOut" resultType="com.demo.link.entity.Media">
+        select media name, pageview value, pie_sort from chart_pie where 1=1
+        <if test="params.name !=null and params.name.trim() != ''">
+            and media = #{params.name}
+        </if>
+        <if test="params.value !=null and params.value.trim() != ''">
+            and pageview = #{params.value}
+        </if>
+        <if test="params.pieSort !=null and params.pieSort.trim() != ''">
+            and pie_sort = #{params.pieSort}
+        </if>
+    </select>
+    <select id="getPieIn" resultType="com.demo.link.entity.Media">
+        select pie_sort name, sum(to_number(pageview)) value from chart_pie group by pie_sort
+        <if test="params.name !=null and params.name.trim() != ''">
+            and pie_sort = #{params.name}
+        </if>
+        <if test="params.value !=null and params.value.trim() != ''">
+            and pageview = #{params.value}
+        </if>
+    </select>
+
+</mapper>
